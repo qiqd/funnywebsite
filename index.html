@@ -33,7 +33,11 @@
   <body>
     <header>Super</header>
     <div class="box"></div>
+
     <script type="module">
+      window.onload = () => {
+        console.log("load ok!")
+      }
       const body = document.querySelector("body")
       const header = document.querySelector("header")
       let box = document.querySelector(".box")
