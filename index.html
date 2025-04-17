@@ -5,80 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hello</title>
     <link rel="stylesheet" href="./css/base.css" />
-
-    <!-- 引入 Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      body {
-        height: 100vh;
-        width: 100vw;
-        padding: 0 10px;
-        background-image: url("./images/8.png");
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-
-      header {
-        padding: 1rem;
-        text-align: center;
-        border-radius: 10px;
-        background-color: transparent;
-        background-color: rgba(255, 255, 255, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      header:hover {
-        background-color: rgba(255, 255, 255, 0.5);
-      }
-
-      .loading {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff; /* 半透明背景 */
-        z-index: 9999;
-      }
-
-      .loading span {
-        font-family: "Poppins", sans-serif; /* 使用自定义字体 */
-        font-size: 2rem;
-        font-weight: bold;
-        color: #fff; /* 白色文字 */
-        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff; /* 蓝色发光效果 */
-        animation: loading-animation 1.5s infinite ease-in-out; /* 添加动画 */
-      }
-
-      /* 定义加载动画 */
-      @keyframes loading-animation {
-        0% {
-          transform: scale(1); /* 正常大小 */
-        }
-        50% {
-          transform: scale(1.2); /* 放大 */
-        }
-        100% {
-          transform: scale(1); /* 恢复正常大小 */
-        }
-      }
-    </style>
   </head>
   <body>
-    <header>Super</header>
-
     <div class="loading">
       <span>loading...</span>
     </div>
-
+    <header>Super</header>
+    <main>
+      <div class="card-1">
+        <div class="card-1-content">
+          <h5 class="card-1-title">title</h5>
+          <p class="card-1-description">the title and the content!</p>
+          <img src="" alt="card 1" />
+        </div>
+        <div class="card-1-content">
+          <h5 class="card-1-title">title</h5>
+          <p class="card-1-description">the title and the content!</p>
+          <img src="" alt="card 1" />
+        </div>
+      </div>
+      <!-- <div class="card-2">
+        <div class="card-2-content"><img src="" alt="card 1" /></div>
+        <div class="card-2-content"><img src="" alt="card 2" /></div>
+        <div class="card-2-content"><img src="" alt="card 3" /></div>
+        <div class="card-2-content"><img src="" alt="card 4" /></div>
+      </div> -->
+    </main>
     <script type="module">
       const body = document.querySelector("body")
       const header = document.querySelector("header")
@@ -86,10 +38,13 @@
 
       window.onload = () => {
         setTimeout(() => {
-          loading.style.display = "none" // 隐藏加载动画
+          loading.style.opacity = 0
           console.log("load ok!")
-        }, 500) // 模拟延迟 2 秒后隐藏
+        }, 500)
       }
+      loading.addEventListener("transitionend", () => {
+        loading.style.display = "none"
+      })
     </script>
   </body>
 </html>
