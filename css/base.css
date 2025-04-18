@@ -1,13 +1,15 @@
 * {
     margin: 0;
     padding: 0;
+    border-radius: 10px;
     box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     padding: 0 10px;
+
     background-image: url("../images/8.png");
     background-size: cover;
     background-position: center center;
@@ -45,7 +47,6 @@ header:hover {
 
 .loading span {
     font-family: "Poppins", sans-serif;
-    /* 使用自定义字体 */
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
@@ -74,9 +75,9 @@ header:hover {
     }
 }
 
-main {
+/* main {
     text-align: center;
-}
+} */
 
 .card-1 {
     height: 100%;
@@ -97,8 +98,7 @@ main {
     position: relative;
     width: 200px;
     height: 500px;
-
-    border-radius: 10px;
+    overflow: hidden;
     transition: all 0.5s ease;
     background-color: yellowgreen;
 }
@@ -132,4 +132,34 @@ main {
     text-align: center;
     transition: all 0.5s ease;
     transform: translateY(100%);
+}
+
+.card-2 {
+    margin-top: 30px;
+    padding: 0 10%;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    gap: 0 20px;
+    justify-content: center;
+
+}
+
+.card-2 .card-2-item {
+    flex: 1;
+    height: fit-content;
+    overflow: hidden;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    background-color: antiquewhite;
+}
+
+.card-2 .card-2-item img {
+    width: 500px;
+    height: auto;
+}
+
+.card-2 .card-2-item:hover {
+    /* flex: 1; */
+    flex-basis: 30%;
 }
