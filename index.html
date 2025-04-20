@@ -10,7 +10,16 @@
     <div class="loading">
       <span>loading...</span>
     </div>
-    <header>Super</header>
+    <header>
+      <div class="logo">
+        <img src="./images/15.jpg" alt="" />
+      </div>
+      <h2>supser</h2>
+      <div class="music">
+        <audio class="player" src="./music/op.mp3"></audio>
+        <button class="btn-play"></button>
+      </div>
+    </header>
     <main>
       <div class="card-1">
         <div class="card-1-content">
@@ -34,30 +43,38 @@
         <div class="card-2-item">
           <img src="./images/3_compressed.jpg" alt="" />
         </div>
-        <div class="card-2-item">
-          <img src="./images/3_compressed.jpg" alt="" />
-        </div>
-        <div class="card-2-item">
-          <img src="./images/3_compressed.jpg" alt="" />
-        </div>
-        <div class="card-2-item">
-          <img src="./images/3_compressed.jpg" alt="" />
-        </div>
       </div>
     </main>
     <script type="module">
       const body = document.querySelector("body")
       const header = document.querySelector("header")
       const loading = document.querySelector(".loading")
-
+      const btnPlay = document.querySelector(".btn-play")
+      const player = document.querySelector(".player")
       window.onload = () => {
         setTimeout(() => {
           loading.style.opacity = 0
           console.log("load ok!")
         }, 100)
       }
+      window.onbeforeunload = () => {
+        localStorage.setItem("current", player.currentTime)
+      }
       loading.addEventListener("transitionend", () => {
         loading.style.display = "none"
+      })
+      btnPlay.addEventListener("click", () => {
+        if (player.paused) {
+          if (localStorage.getItem("current")) {
+            player.currentTime = localStorage.getItem("current")
+          }
+          player.play()
+          btnPlay.classList.add("play-active")
+        } else {
+          player.pause()
+          localStorage.setItem("current", player.currentTime)
+          btnPlay.classList.remove("play-active")
+        }
       })
     </script>
   </body>
