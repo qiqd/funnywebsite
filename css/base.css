@@ -8,7 +8,7 @@
 body {
     height: 100%;
     padding: 0 10px;
-    background-image: url("../images/8_compressed.png");
+    background-image: url(../images/cap-bg.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -47,11 +47,11 @@ header .btn-play {
     border: 0;
     cursor: pointer;
     background-size: cover;
-    background-image: url(../images/stop.png);
+    background-image: url(../images/music.png)
 }
 
 header .play-active {
-    background-image: url(../images/music.png);
+    background-image: url(../images/stop.png)
 }
 
 header:hover {
@@ -70,7 +70,7 @@ header:hover {
     background-color: #fff;
     opacity: 1;
     transition: all 0.5s ease;
-    /* 半透明背景 */
+
     z-index: 9999;
 }
 
@@ -84,7 +84,7 @@ header:hover {
 
 }
 
-/* 定义加载动画 */
+
 @keyframes loading-animation {
     0% {
         text-shadow: 0 0 0 #0ff, 0 0 0 #0ff, 0 0 0 #0ff;
@@ -112,14 +112,14 @@ header:hover {
     width: fit-content;
     margin: auto;
     margin-top: 10px;
-    /* background-color: rgba(255, 255, 255, 0.3); */
+
     display: flex;
     gap: 0 50px;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
     perspective: 1700px;
-    /* 添加透视效果 */
+
 }
 
 .card-1-content {
@@ -191,4 +191,42 @@ header:hover {
 
 .card-2 .card-2-item:hover {
     width: 500px;
+}
+
+.card-3 {
+    margin-top: 10px;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.card-3 .card-3-item img {
+    width: 100%;
+
+    height: auto;
+
+    max-width: 400px;
+
+    min-width: 300px;
+
+    min-height: 200px;
+
+}
+
+
+@media (max-width: 768px) {
+    .card-3 .card-3-item img {
+        min-width: 200px;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .card-3 .card-3-item img {
+        min-width: 100%;
+
+    }
 }
