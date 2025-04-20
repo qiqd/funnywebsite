@@ -12,7 +12,7 @@
     </div>
     <header>
       <div class="logo">
-        <img src="./images/15.jpg" alt="" />
+        <img src=" " alt="" />
       </div>
       <h2>supser</h2>
       <div class="music">
@@ -25,50 +25,21 @@
         <div class="card-1-content">
           <h5 class="card-1-title">title</h5>
           <p class="card-1-description">the title and the content!</p>
-          <img src="" alt="card 1" />
+          <img src="./images/manhua.jpg" alt="card 1" />
         </div>
         <div class="card-1-content">
           <h5 class="card-1-title">title</h5>
           <p class="card-1-description">the title and the content!</p>
-          <img src="" alt="card 1" />
+          <img src="./images/tv-.jpg" alt="card 1" />
         </div>
       </div>
       <div class="card-2">
         <div class="card-2-item">
-          <img src="./images/3_compressed.jpg" alt="" />
-        </div>
-        <div class="card-2-item">
-          <img src="./images/3_compressed.jpg" alt="" />
-        </div>
-        <div class="card-2-item">
-          <img src="./images/3_compressed.jpg" alt="" />
+          <img src=" " alt="" />
         </div>
       </div>
       <div class="card-3">
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
-        <div class="card-3-item"><img src="./images/11.jpg" alt="" /></div>
+        <div class="card-3-item"><img src=" " alt="" /></div>
       </div>
     </main>
     <script type="module">
@@ -78,6 +49,12 @@
       const btnPlay = document.querySelector(".btn-play")
       const player = document.querySelector(".player")
       window.onload = () => {
+        const time = new Date()
+        if (time.getHours() >= 18) {
+          // localStorage.removeItem("current")
+          player.src = "./music/ed.mp3"
+        }
+
         setTimeout(() => {
           loading.style.opacity = 0
           console.log("load ok!")
